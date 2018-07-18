@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <title>Седона - Отели</title>
+  <link href="css/normalize.min.css" rel="stylesheet">
+  <link href="css/main.min.css" rel="stylesheet">
+</head>
+<body>
+<div class="container">
+
+  <header class="header layoutCenter">
+    <a class="header-logo" href="index.html">
+      <img width="138" height="70" src="img/logo.png" alt="Sedona - Логотип" title="На главную">
+    </a>
+    <nav class="mainNav">
+      <ul class="mainNav-list">
+        <li class="mainNav-item"><a class="mainNav-link mainNav-link--left" href="#">Информация</a></li>
+        <li class="mainNav-item"><a class="mainNav-link mainNav-link2" href="#">Фото и видео</a></li>
+        <li class="mainNav-item"><a class="mainNav-link mainNav-link3" href="index.html#map">Карта штата</a></li>
+        <li class="mainNav-item"><a class="mainNav-link mainNav-link--right mainNav-link--active">Гостинница</a></li>
+      </ul>
+    </nav>
+  </header>
+
+
+  <main class="hotelsContent">
+    <form class="filterForm layoutCenter" action="https://echo.htmlacademy.ru" method="get">
+      <fieldset class="filterForm-group">
+        <legend class="filterForm-title">Инфраструктура:</legend>
+        <input class="filterForm-checkbox" type="checkbox" name="pool" id="mark-1" checked>
+        <label class="filterForm-label icon-check-off" for="mark-1">Бассейн</label>
+        <input class="filterForm-checkbox" type="checkbox" name="parking" id="mark-2">
+        <label class="filterForm-label icon-check-off" for="mark-2">Парковка</label>
+        <input class="filterForm-checkbox" type="checkbox" name="wifi" id="mark-3" checked disabled>
+        <label class="filterForm-label  icon-check-off" for="mark-3">Wi-Fi</label>
+      </fieldset>
+
+      <fieldset class="filterForm-group">
+        <legend class="filterForm-title">Тип жилья:</legend>
+        <input class="filterForm-checkbox" type="checkbox" name="hotels" id="flag-1" checked>
+        <label class="filterForm-label icon-check-off" for="flag-1">Гостинница</label>
+        <input class="filterForm-checkbox" type="checkbox" name="motels" id="flag-2" checked>
+        <label class="filterForm-label icon-check-off" for="flag-2">Мотель</label>
+        <input class="filterForm-checkbox" type="checkbox" name="apartments" id="flag-3" checked>
+        <label class="filterForm-label icon-check-off" for="flag-3">Апартаменты</label>
+      </fieldset>
+
+      <fieldset class="filterForm-group filterForm-groupCount">
+        <legend class="filterForm-title filterForm-countTitle">Стоимость в сутки (р):</legend>
+        <div class="filterForm-count">
+          <label class="count-label">От <input class="count-input" type="text" name="countOver" value="0"></label>
+          <label class="count-label count-label--until">До <input class="count-input" type="text" name="countUntil"
+            value="3000"></label>
+        </div>
+        <div class="filterForm-range">
+          <span class="range-line"></span>
+          <span class="range-control range-control--left"></span>
+          <span class="range-control range-control--right"></span>
+        </div>
+        <a class="filterForm-btn" href="#">Показать</a>
+      </fieldset>
+    </form>
+
+    <section class="catalog">
+      <header class="catalog-result layoutCenter">
+        <h2 class="title">
+          Найдено:
+          <span class="title catalogResult-num">3</span>
+        </h2>
+        <div class="catalog-sort">
+          <span class="sort-name">Сортировка:</span>
+          <a class="sort-link sort-link--active">По цене</a>
+          <a class="sort-link" href="#">По типу</a>
+          <a class="sort-link" href="#">По рейтингу</a>
+        </div>
+        <div class="result-arrow">
+          <a class="arrow arrow-up icon-up-dir" href="#" title="По возрастанию">По возрастанию</a>
+          <a class="arrow arrow-down icon-down-dir" href="#" title="По убыванию">По убыванию</a>
+        </div>
+      </header>
+
+      <div class="catalog-locateWrap">
+        <article class="catalog-locate">
+          <a href="#"><img class="locate-img" width="135" height="90" src="img/catalog-1.jpg" alt="Amara Resort & Spa"></a>
+          <div class="locate-info">
+            <h2 class="title--md info-title"><a class="link" href="#">Amara Resort & Spa</a></h2>
+            <div class="info-place">
+              Гостиница
+              <span class="info-price">От 3500 р.</span>
+            </div>
+            <a class="btn info-btn locate-btn" href="#">Подробнее</a>
+            <a class="btn btn--success locate-btn" href="#">Забронировать</a>
+          </div>
+          <div class="locate-rating">
+            <div class="rating-stars locate1-stars">
+              <span class="stars-inner icon-star"></span>
+              <span class="stars-inner stars-inner2 icon-star"></span>
+            </div>
+            <span class="rating-num">Рейтинг: 8,5</span>
+          </div>
+        </article>
+
+        <article class="catalog-locate">
+          <a href="#"><img class="locate-img" width="135" height="90" src="img/catalog-2.jpg" alt="Amara Resort & Spa"></a>
+          <div class="locate-info">
+            <h2 class="title--md info-title"><a class="link" href="#">Desert Quail Inn</a></h2>
+            <div class="info-place">
+              Мотель
+              <span class="info-price1">От 2000 р.</span>
+            </div>
+            <a class="btn locate-btn locate-btn" href="#">Подробнее</a>
+            <a class="btn btn--success locate-btn" href="#">Забронировать</a>
+          </div>
+          <div class="locate-rating">
+            <div class="rating-stars locate2-stars">
+              <span class="stars-inner icon-star"></span>
+              <span class="stars-inner stars-inner2 icon-star"></span>
+            </div>
+            <span class="rating-num">Рейтинг: 8,9</span>
+          </div>
+        </article>
+
+        <article class="catalog-locate">
+          <a href="#"><img class="locate-img" width="135" height="90" src="img/catalog-3.jpg" alt="Amara Resort & Spa"></a>
+          <div class="locate-info">
+            <h2 class="title--md  info-title"><a class="link" href="#">Villas at Poco Diablo</a></h2>
+            <div class="info-place">
+              Апартаменты
+              <span class="info-price2">От 4000 р.</span>
+            </div>
+            <a class="btn locate-btn locate-btn" href="#">Подробнее</a>
+            <a class="btn btn--success locate-btn" href="#">Забронировать</a>
+          </div>
+          <div class="locate-rating">
+            <div class="rating-stars locate3-stars">
+              <span class="stars-inner icon-star"></span>
+              <span class="stars-inner stars-inner2 icon-star"></span>
+            </div>
+            <span class="rating-num">Рейтинг: 9,2</span>
+          </div>
+        </article>
+      </div>
+    </section>
+  </main>
+
+
+  <footer class="footer layoutCenter hotelsFooter">
+    <a class="title footer-linkHash link" href="#">#VisitSedona</a>
+    <div class="footer-social">
+      <a class="btn social-btn icon-twitter" href="#" title="Twitter">Twitter</a>
+      <a class="btn social-btn icon-facebook" href="#" title="Facebook">Facebook</a>
+      <a class="btn social-btn icon-youtube" href="#" title="Youtube">Youtube</a>
+    </div>
+    <div class="footer-copyright">
+      Website by
+      <a class="copyright-link" href="#">HTML Academy</a>
+    </div>
+  </footer>
+
+</div>
+<script src="js/sort.js"></script>
+</body>
+</html>
