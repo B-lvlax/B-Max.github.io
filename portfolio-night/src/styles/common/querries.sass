@@ -1,0 +1,103 @@
+$tablet: 736px
+$laptop: 1200px
+$desktop: 1800px
+
+
+@media screen and (min-width: $tablet)
+  @import common/header/header--md
+  @import common/footer/footer--md
+  @import welcome/welcome--md
+  @import blog/blog--md
+  @import about/about--md
+  @import works/works--md
+
+  // GLOBAL
+  .person
+    &-title
+      font-size: 28px
+    &-txt
+      font-size: 16px
+
+
+  // MENU
+  .menu
+    &-btn
+      top: 20px
+      right: 30px
+
+    &-lines
+      transform: scale(1.1, 1.2)
+
+  .nav-item
+    margin-bottom: 60px
+
+  .nav-link
+    font-size: 49px
+
+    &:hover::after
+      width: 90px
+
+
+
+
+@media screen and (min-width: $laptop)
+  @import common/footer/footer--lg
+  @import blog/blog--lg
+  @import about/about--lg
+  @import works/works--lg
+
+  // Page INDEX
+  .indexBg
+    height: 400px
+
+    &-img
+      width: 1900px
+      height: 400px
+
+
+  //HEADER
+  .header-inner
+    height: 50%
+
+  .person-bg
+    width: 459px
+    height: 270px
+
+  .person-title--caps
+    font-size: 60px
+
+  .person-txt
+    font-size: 18px
+
+
+  // MENU
+  .nav-link
+    font-size: 63px
+
+
+  // Page WELCOME - main
+  .flip
+    width: 380px
+
+  .entry-title
+    font-size: 35px
+
+
+
+
+@media screen and (min-width: $desktop)
+  @import about/about--xl
+
+  // Page INDEX
+  .indexBg
+    height: 450px
+
+    &-img
+      left: -200px
+      width: 3300px
+      height: 450px
+
+
+  // Page WORKS - main
+  .feedback
+    background-position: 80% 100%, center

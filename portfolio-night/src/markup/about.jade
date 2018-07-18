@@ -1,0 +1,98 @@
+extends common/template
+include common/mix
+
+
+block title
+  title Обо мне
+
+block navLink-about
+  a.nav-link.nav-link--active(href="about.html") Обо мне
+
+block cornerRight
+  svg.header-corner.header-corner--right(viewbox="0 0 160 40" width="50%")
+    polygon(points="160 0, 160 40, 0 40" preserveAspectRatio="none")
+
+
+block mainContent
+  main.about-main
+    article.about#toBottom
+      +bgTitle('about', 'Обо мне', '#stars2')
+      .about-pictWrap
+        img.about-img(src="img/custom/ava.jpg" alt="B-Max")
+      .about-desc
+        h3.about-title Кто я
+        p.about-txt Я веб-разработчик из Киева. Занимаюсь разработкой современных сайтов и приложений. Мне нравится делать интересные и современные проекты.
+        p.about-txt Этот сайт я сделал в рамках обучения в школе онлайн образования LoftSchool. Чуть позже я освежу в нём свой контент. А пока посмотрите, как тут всё классно и красиво!
+
+
+    section.skills
+      .skills-desc
+        h3.skills-title Чем я могу быть
+          span.skills-title--bottom вам полезен
+        p.skills-txt Больше всего меня привлекет Frontend разработка, но я также знаком и могу решать не сложные задачи на Backend. Но давайте по порядку.
+
+      section.skills-group
+        h3.skills-title--s Frontend
+        ul.skills-diagramList
+          li.skills-diagramItem
+            span.skills-diagramName HTML5
+            +diagram('html', '200')
+          li.skills-diagramItem
+            span.skills-diagramName CSS3
+            +diagram('css', '180')  
+          li.skills-diagramItem
+            span.skills-diagramName JavaScript <br/> & JQuery
+            +diagram('js', '320')
+
+        section.skills-group
+          h3.skills-title--s Backend
+          ul.skills-diagramList
+            li.skills-diagramItem
+              span.skills-diagramName PHP
+              +diagram('php', '350')
+            li.skills-diagramItem
+              span.skills-diagramName mySQL
+              +diagram('sql', '360')
+            li.skills-diagramItem
+              span.skills-diagramName Node.js <br/> & npm
+              +diagram('node', '330')
+            li.skills-diagramItem
+              span.skills-diagramName Mongo.db
+              +diagram('mongo', '377')
+
+        section.skills-group
+          h3.skills-title--s WorkFlow
+          ul.skills-diagramList
+            li.skills-diagramItem
+              span.skills-diagramName Git
+              +diagram('git', '270')
+            li.skills-diagramItem
+              span.skills-diagramName Gulp
+              +diagram('gulp', '230')
+            li.skills-diagramItem
+              span.skills-diagramName Bower
+              +diagram('bower', '290')
+
+
+    .contacts
+      .contacts-inner
+        h3.contacts-title Контакты 
+        ul.contacts-list
+          li.contacts-listItem
+            svg.contacts-icon(width="35" height="35")
+              use(xlink:href="#skype_n")
+            a.contacts-link(href="#") Some skype
+          li.contacts-listItem
+            svg.contacts-icon(width="35" height="35")
+              use(xlink:href="#envelope_n")
+            a.contacts-link(href="mailto:bmax.working@gmail.com") bmax.working@gmail.com
+          li.contacts-listItem
+            svg.contacts-icon(width="35" height="35")
+              use(xlink:href="#phone_n")
+            a.contacts-link(href="#") Some number
+          li.contacts-listItem
+            svg.contacts-icon(width="35" height="35")
+              use(xlink:href="#map_n")
+            a.contacts-link#anchorMap(href="https://www.google.com.ua/maps/place/4A,+Pavla+Chubynskoho+St,+4%D0%90,+Kyiv/@50.4285624,30.6453128,17z/data=!3m1!4b1!4m5!3m4!1s0x40d4c517def564df:0xbe3b8913061f62be!8m2!3d50.4285624!4d30.6475015" target="_blanc") Украина, г.Киев
+
+      .contacts-map#map

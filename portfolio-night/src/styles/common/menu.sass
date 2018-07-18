@@ -1,0 +1,115 @@
+.menu
+  color: $baseClr
+
+  &::before, &::after
+    content: ''
+    z-index: 20
+    position: absolute
+    top: 0
+    width: 0
+    height: 100%
+    background-color: darken(rgba($theme, .87), 20%)
+
+  &::after
+    content: ''
+    right: 0
+    transform: rotate(180deg)
+
+  &--active
+    z-index: 20
+    &::before, &::after
+      width: 50%
+      transition: all .5s
+
+  &-btn
+    position: fixed
+    z-index: 25
+    top: 10px
+    right: 20px
+    width: 45px
+    height: 40px
+    padding: 0
+    cursor: pointer
+    border: none
+    outline: none
+    background: transparent
+
+    &:hover
+      @include grow
+
+  &-lines,
+  &-lines::before,
+  &-lines::after
+    position: absolute
+    top: calc(50% - 2px)
+    left: 0
+    width: 100%
+    height: 5px
+    border-radius: 15px
+    background-color: $baseClr
+    box-shadow: 0 0 8px rgba(#000, .7)
+    transition: all .3s ease
+    text-indent: 99999px
+
+  &-lines::before
+    content: ''
+    top: -13px
+
+  &-lines::after
+    content: ''
+    top: 13px
+
+  &-lines--act
+    background-color: transparent
+    box-shadow: none
+
+    &::before
+      transform: rotate(45deg)
+      top: 0
+      background-color: $baseClr
+      box-shadow: none
+
+    &::after
+      transform: rotate(-45deg)
+      top: 0
+      background-color: $baseClr
+      box-shadow: none
+
+
+.nav
+  visibility: hidden
+  position: fixed
+  top: 50%
+  left: 50%
+  transform: translate(-50%, -50%)
+  align-self: center
+  z-index: 25
+  opacity: 0
+
+  &--active
+    visibility: visible
+    opacity: 1
+    transition: all 0s ease .6s
+
+  &-list
+    text-align: center
+    padding: 0
+    list-style: none
+
+  &-item
+    margin-bottom: 45px
+
+  &-item--show
+    animation: rubberBand  1.7s
+
+  &-link
+    @include sansus(35px, 1.5, $baseClr)
+    text-transform: uppercase
+    position: relative
+    text-decoration: none
+    cursor: pointer
+    @include underline($baseClr, -20px, 3px)
+
+    &:active:hover,
+    &--active:hover
+      cursor: default

@@ -1,0 +1,60 @@
+.blog-main
+  display: flex
+  justify-content: center
+  width: 100%
+  padding-bottom: 200px
+
+.sidebar
+  position: static
+  z-index: auto
+  align-items: flex-start
+  overflow: hidden
+  min-width: 290px
+  max-width: 360px
+  padding-top: 20px
+  background-color: $bgClr
+  box-shadow: none
+
+  &--fixed
+    position: fixed
+    z-index: 5
+    top: 50px
+    align-items: center
+    width: 290px
+    max-height: 100%
+
+  li
+    margin-bottom: 15px
+
+  a
+    position: relative
+    display: block
+    color: $primaryClr
+
+    &:hover
+      color: $theme
+      box-shadow: inset -3px 0 0 $theme
+
+    &:active
+      color: darken($theme, 15%)
+      box-shadow: inset -3px 0 0 darken($theme, 15%)
+
+
+.sidebar-btn
+  display: none
+
+
+.blogContent
+  min-width: 700px
+  max-width: 900px
+  margin-left: 70px
+  padding-right: 20px
+  padding-left: 20px
+
+  h2
+    font-size: 35px
+
+
+.active.active
+  color: darken($theme, 15%)
+  box-shadow: inset -3px 0 0 darken($theme, 15%)

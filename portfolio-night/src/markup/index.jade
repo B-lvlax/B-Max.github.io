@@ -1,0 +1,72 @@
+include common/mix
+extends common/start
+
+
+block content
+  .container
+
+    .videoBg
+      video.videoBg-video(width="100%" height="auto" preload="true" loop="true" autoplay)
+        source(src="img/night.mp4" type="video/mp4")
+
+    .indexBg
+      img.indexBg-img(src="img/mountains.gif" alt="Гори")
+
+
+    .indexContent
+      a.login-btn Авторизоваться
+      .flip
+        .flip-card
+          .person
+            .person-imgWrap
+              img.person-img(src="img/custom/ava.jpg" width="141" height="141" alt="B-Max")
+            h1.person-title B - Max
+            .person-txt Личный сайт веб-разработчика
+
+
+          +social('social')
+
+          ul.flip-cardBtn.cardBtn
+            li.cardBtn-item.cardBtn-item--1
+              a.cardBtn-link(href="works.html") Мои работы
+            li.cardBtn-item.cardBtn-item--2
+              a.cardBtn-link(href="about.html") Обо мне
+            li.cardBtn-item.cardBtn-item--3
+              a.cardBtn-link(href="blog.html") Блог
+
+        section.flip-entry.entry
+          h2.entry-title Авторизируйтесь
+          form.entryForm(action="https://echo.htmlacademy.ru" method="post")
+            .entryForm-group
+              label.entryForm-label(for="input-1")
+                svg.entryForm-icon(width="15" height="17")
+                  use(xlink:href="#login")
+              input.input.entryForm-input#input-1(type="text" name="login" placeholder="Логин")
+
+            .entryForm-group
+              label.entryForm-label.entryForm-label--second(for="input-2")
+                svg.entryForm-icon(width="18" height="17")
+                  use(xlink:href="#password")
+              input.input.entryForm-input#input-2(type="password" name="password" placeholder="Пароль")
+
+            input.entryForm-check#man(type="checkbox" name="man")
+            label.entryForm-labelCheck(for="man") Я человек
+              svg.labelCheck-icon(width="12" height="9")
+                use(xlink:href="#check")
+
+            .entry-question.question
+              .question-txt Вы точно не робот?
+              input.question-radio(id="radio-1" type="radio" name="robot" value="not")
+              label.question-label.question-label--first(for="radio-1") Да
+              input.question-radio(id="radio-2" type="radio" name="robot" value="yes" checked)
+              label.question-label.question-label--second(for="radio-2") Не знаю
+
+            ul.entryBtn
+              li.entryBtn-item.entryBtn-item--left
+                a.entryBtn-link(href="index.html") На главную
+              li.entryBtn-item.entryBtn-item--right
+                button.input.entryBtn-link(type="submit") Войти
+
+
+      footer.indexFooter
+        +copyright('copyright')

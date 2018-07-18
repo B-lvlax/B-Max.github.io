@@ -1,0 +1,160 @@
+.about-main
+  width: 100%
+  min-height: 100%
+
+.about
+  display: flex
+  flex-direction: column
+  align-items: center
+  background-color: $bgClr
+
+  @include bgTitle
+
+  &-pictWrap
+    width: 320px
+    height: 283px
+    overflow: hidden
+    margin-bottom: 20px
+
+  &-img
+    @include img
+
+  &-desc
+    padding-left: 10px
+    padding-right: 10px
+    text-align: center
+
+  &-title
+    @include title--deco
+    margin-bottom: 0
+
+  &-txt
+    line-height: 1.5
+
+
+.skills
+  display: flex
+  flex-direction: column
+  align-items: center
+  background-color: lighten($bgClr, 1.5%)
+
+  &-desc
+    @extend .about-desc
+
+  &-title
+    @extend .about-title
+
+    &--bottom
+      display: block
+      text-align: center
+
+  &-txt
+    @extend .about-txt
+
+  &-group
+    text-align: center
+
+  &-title--s
+    @include sansus(20px, 1.35)
+
+  &-diagramList
+    width: 100%
+    display: flex
+    flex-wrap: wrap
+    justify-content: center
+    margin: 0
+    margin-bottom: 20px
+    padding: 0
+    list-style: none
+
+  &-diagramItem
+    position: relative
+    display: block
+    margin-bottom: 28px
+    width: 150px
+
+  &-diagramName
+    position: absolute
+    top: 50%
+    left: 50%
+    transform: translate(-50%, -50%)
+    @include sansus(13px, 1.2, $theme)
+
+
+.diagramCircle
+  &-state--html,
+  &-state--css
+    stroke: rgba($theme, .8)
+
+  &-state--git,
+  &-state--gulp,
+  &-state--bower
+    stroke: rgba($theme, .6)
+
+  &-state--node
+    stroke: rgba($theme, .4)
+
+  &-state--js,
+  &-state--php,
+  &-state--sql,
+  &-state--mongo
+    stroke: rgba($theme, .2)
+
+
+.contacts
+  width: 100%
+  position: relative
+
+  &-inner
+    z-index: 5
+    position: absolute
+    top: 0
+    left: 0
+    width: 100%
+    padding: 1px 10px 25px
+    background-color: darken($baseClr, 2%)
+
+  &-title
+    @include title--deco
+    font-size: 35px
+    padding-bottom: 5px
+
+  &-list
+    width: 320px
+    padding: 0
+    list-style: none
+    margin: 0 auto
+
+  &-listItem
+    display: flex
+    align-items: center
+    margin-bottom: 10px
+
+  &-icon
+    fill: $theme
+    width: 35px
+    height: 35px
+
+  &-link
+    color: $primaryClr
+    font-weight: 500
+    display: block
+    padding-top: 10px
+    padding-bottom: 10px
+    margin-left: 10px
+    position: relative
+    text-decoration: none
+    @include underline($theme, -1px, 1px)
+
+    &:hover
+      color: $theme
+
+    &:active
+      color: darken($theme, 10%)
+
+  &-map
+    width: 100%
+    min-height: 650px
+    height: 100vh
+    background: $theme url(../img/custom/map.jpg) no-repeat center
+    background-size: cover

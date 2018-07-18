@@ -1,0 +1,74 @@
+.footer
+  width: 100%
+  color: $baseClr
+
+  &-inner
+    position: relative
+    display: flex
+    flex-direction: column
+    padding-right: 15px
+    padding-left: 15px
+    text-align: center
+    background-color: $primaryClr
+    font-size: 14px
+    font-weight: 300
+
+  &-info
+    padding-top: 15px
+    padding-bottom: 15px
+    border-bottom: 1px solid rgba($baseClr, 0.3)
+    line-height: 1.3
+
+  &-menu
+    display: flex
+    justify-content: center
+    margin: 0
+    padding: 0
+    padding-bottom: 15px
+    list-style: none
+    font-weight: 500
+
+  &-nav
+    @extend .footer-info
+
+  &-item:not(:first-child)
+    margin-left: 9px
+
+  &-contacts
+    margin: 0
+    padding: 15px 0 15px
+    list-style: none
+
+  &-link
+    display: block
+    text-decoration: none
+    color: $baseClr
+    line-height: 1.7
+
+    &:hover
+      color: lighten($theme, 20%)
+
+    &:active,
+    &--active
+      cursor: default
+      color: darken($theme, 20%)
+
+
+.footSocial
+  @include social
+
+  &-link:hover .footSocial-icon
+    @include grow
+    fill: $theme
+
+  &-link:active .footSocial-icon,
+  &-link--active .footSocial-icon
+    cursor: default
+    fill: darken($theme, 20%)
+
+  &-icon
+    fill: rgba($baseClr, 0.5)
+
+.innerCopyright
+  @include copyright
+  background-color: rgba($theme, 0.9)

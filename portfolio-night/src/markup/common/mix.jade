@@ -1,0 +1,46 @@
+mixin copyright(name)
+  div(class="#{name}")
+    span(class="#{name}-name") © B - Max
+    | создано с любовью в LoftSchool | 2016
+
+
+mixin social(name)
+  ul(class="#{name}")
+    li(class="#{name}-btn")
+      a(class="#{name}-link" href="https://vk.com/b_lvlax" title="Профиль в ВК" target="_blanc") 
+        span(class="#{name}-txt--hidden") Вконтакте
+        svg(class="#{name}-icon #{name}-icon--vk" width="31" height="17")
+          use(xlink:href="#vk")
+    li(class="#{name}-btn")
+      a(class="#{name}-link" href="https://github.com/B-lvlax" title="Работы на GitHub" target="_blanc")
+        span(class="#{name}-txt--hidden") GitHub
+        svg(class="#{name}-icon #{name}-icon--gh" width="36" height="27")
+          use(xlink:href="#github")
+    li(class="#{name}-btn")
+      a(class="#{name}-link" href="mailto:bmax.working@gmail.com" title="Почта") 
+        span(class="#{name}-txt--hidden") Почта
+        svg(class="#{name}-icon #{name}-icon--in" width="24" height="22")
+          use(xlink:href="#envelope")
+
+
+mixin diagram(mod, skill)
+  svg.skills-diagramCircle(width="110" height="110")
+    circle.diagramCircle-inner(r="45" cx="55" cy="55" fill="none" stroke="#DFDCD5" stroke-width="20")
+    circle.diagramCircle-state(class="diagramCircle-state--#{mod}" r="45" cx="87" cy="55" fill="none" stroke="#004CD1" stroke-width="20" stroke-dasharray="377" stroke-dashoffset="#{skill}" transform="rotate(-90 71 71)")
+
+
+mixin bgTitle(name, txt, path)
+  div(class="#{name}-titleWrap")
+    svg(class="#{name}-icon")
+      use(xlink:href="#{path}")
+    h2(class="#{name}-title--main")= txt 
+
+
+
+mixin preloader
+  .preloader.preloader-noJs
+    .preloader-inner
+      svg.circle(xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="200px" height="200px" viewBox="0 0 100 100" xml:space="preserve")
+        circle.circle-bar(fill="none" transform="rotate(-90 50 25)" stroke-width="2.5864" cx="25" cy="25" r="25")
+        circle.circle-small(cx="50" cy="15" r="4.5")
+      span.circle-txt 0

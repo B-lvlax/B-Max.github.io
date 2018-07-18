@@ -1,0 +1,113 @@
+.blog-main
+  min-height: 100%
+  padding: 10px 15px 10px
+  background-color: $bgClr
+
+.sidebar
+  position: fixed
+  z-index: 5
+  top: 0
+  left: -290px
+  display: flex
+  align-items: center
+  width: 290px
+  min-height: 100%
+  transition: left 0.5s ease
+  background-color: rgba(darken($theme, 25%), 0.9)
+  box-shadow: 3px 0 3px rgba(#000, 0.2)
+
+  &--show
+    left: 0
+
+  &-btn
+    position: fixed
+    z-index: 10
+    top: 50%
+    left: -3px
+    overflow: hidden
+    width: 25px
+    height: 60px
+    cursor: pointer
+    transition: left 0.5s ease
+    text-indent: -99999px
+    border: none
+    outline: none
+    background-color: transparent
+
+    &:hover
+      transform: scaleY(1.4)
+
+    &::after
+      content: ''
+      position: absolute
+      top: 0
+      left: -30px
+      width: 50px
+      height: 100%
+      border-radius: 50%
+      background-color: rgba(darken($theme, 25%), 0.9)
+      box-shadow: 3px 0 3px rgba(#000, 0.2)
+
+    &--move
+      left: 289px
+
+
+  ul
+    padding: 0
+    list-style: none
+    text-align: right
+
+  li
+    margin-bottom: 10px
+
+  a
+    display: block
+    padding: 10px 20px
+    text-decoration: none
+    color: rgba($baseClr, 0.7)
+
+    &:hover
+      color: $baseClr
+      font-weight: 500
+
+    &:active
+      color: $theme
+      font-weight: 500
+
+    &--active
+      cursor: default
+      color: $baseClr
+      font-weight: 500
+
+
+
+.blogContent
+  article
+    margin-bottom: 30px
+    padding-bottom: 15px
+
+  article:not(:last-child)
+    box-shadow: inset 0 -4px 0 rgba(#000, 0.07)
+
+  h2
+    @include sansus(21px, 1.33)
+
+  time
+    display: block
+    margin-bottom: 10px
+    color: rgba($theme, 0.7)
+    font-size: 14px
+
+  img
+    @include img
+
+  p
+    font-size: 14px
+    line-height: 1.5
+
+  ul
+    margin: 16px auto
+
+  li
+    font-size: 14px
+    line-height: 1.5
