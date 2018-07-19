@@ -74,9 +74,11 @@
 ======================================================*/
 (function() {
   $('.container').mousemove(function(e) {
-    $('.indexBg-img').css({
-      'transform': 'translate3d(' + e.pageX / -15 + 'px, ' + e.pageY / 15 + 'px, 0)'
-    });
+    if ($(window).width() >= 768) {
+      $('.indexBg-img').css({
+        'transform': 'translate3d(' + e.pageX / -15 + 'px, ' + e.pageY / 15 + 'px, 0)'
+      });
+    }
   });
 })();
 
