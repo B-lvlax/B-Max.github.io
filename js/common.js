@@ -21,6 +21,7 @@
 
 })();
 
+
 /*======================================================
   MENU
 ======================================================*/
@@ -51,6 +52,7 @@
   });
 })();
 
+
 /*======================================================
   SIDEBAR
 ======================================================*/
@@ -69,28 +71,52 @@
   });
 })();
 
+
 /*======================================================
   Типо PARRALAX
 ======================================================*/
 (function() {
   $('.container').mousemove(function(e) {
-    $('.indexBg-img').css({
-      'transform': 'translate3d(' + e.pageX / -15 + 'px, ' + e.pageY / 15 + 'px, 0)'
-    });
+    if ($(window).width() >= 768) {
+      $('.indexBg-img').css({
+        'transform': 'translate3d(' + e.pageX / -15 + 'px, ' + e.pageY / 15 + 'px, 0)'
+      });
+    }
   });
 })();
+
 
 /*======================================================
   ANIMATION on Scroll
 ======================================================*/
 (function() {
   $(window).scroll(function() {
-    $('.blogContent article, .skills-group, .slider-info--active, .slider-slidePic, .feedback-titleWrap, .comments, .about-img').each(function(i) {
+    $('.blogContent article, .skills-group, .slider-info--active, .slider-slidePic, .feedback-titleWrap, .comments, .about-img, .feedbackForm-wrap').each(function(i) {
       var
         $pos = $(this).offset().top,
         $topOfWindow = $(window).scrollTop();
 
-      if ($pos < $topOfWindow + 900) $(this).addClass('moveUp');
-    })
-  })
+      $(this).addClass('moveUp--hidden');
+
+      if ($pos < $topOfWindow * 3) {
+        $(this).removeClass('moveUp--hidden').addClass('moveUp');
+      }
+    });
+  });
+})();
+
+/*======================================================
+  Adding smoothyness to buttons for scrolling up/down
+======================================================*/
+(function() {
+  $('.header-arrowDown, .arrowUp').on('click', function(e) {
+    e.preventDefault();
+    var $elemPos = $('#toBottom').offset().top;
+
+    if ($(this).is('.arrowUp')) $elemPos = 0;
+
+    $('body, html').animate({
+      scrollTop: $elemPos
+    }, 500);
+  });
 })();

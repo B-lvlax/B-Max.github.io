@@ -415,35 +415,18 @@ body {
   }
 }
 
-@-webkit-keyframes moveUp {
-  from {
-    -webkit-transform: translate3d(0, 300px, 0);
-            transform: translate3d(0, 300px, 0);
-    opacity: 0;
-  }
-  to {
-    -webkit-transform: translate3d(0, 0, 0);
-            transform: translate3d(0, 0, 0);
-    opacity: 1;
-  }
-}
-
-@keyframes moveUp {
-  from {
-    -webkit-transform: translate3d(0, 300px, 0);
-            transform: translate3d(0, 300px, 0);
-    opacity: 0;
-  }
-  to {
-    -webkit-transform: translate3d(0, 0, 0);
-            transform: translate3d(0, 0, 0);
-    opacity: 1;
-  }
-}
-
 .moveUp {
-  -webkit-animation: moveUp 1.2s ease;
-          animation: moveUp 1.2s ease;
+  -webkit-transform: translate3d(0, 0, 0);
+          transform: translate3d(0, 0, 0);
+  opacity: 1;
+  -webkit-transition: all 1.2s ease;
+  transition: all 1.2s ease;
+}
+
+.moveUp--hidden {
+  -webkit-transform: translate3d(0, 500px, 0);
+          transform: translate3d(0, 500px, 0);
+  opacity: 0;
 }
 
 .container {
@@ -1520,7 +1503,7 @@ body {
   font-weight: 500;
 }
 
-.sidebar a--active {
+.sidebar a.active {
   cursor: default;
   color: #fff;
   font-weight: 500;
@@ -1905,7 +1888,7 @@ body {
 
 .headerBg-corners {
   width: 100%;
-  height: 180px;
+  height: 175px;
   fill: rgba(0, 0, 0, 0.6);
 }
 
@@ -2421,7 +2404,7 @@ body {
     height: 21px;
   }
   .headerBg-corners {
-    height: 260px;
+    height: 253px;
   }
   .person-title--caps {
     font-size: 49px;
@@ -2812,6 +2795,11 @@ body {
     -webkit-box-shadow: inset -3px 0 0 #003085;
             box-shadow: inset -3px 0 0 #003085;
   }
+  .sidebar a.active {
+    color: #003085;
+    -webkit-box-shadow: inset -3px 0 0 #003085;
+            box-shadow: inset -3px 0 0 #003085;
+  }
   .sidebar-btn {
     display: none;
   }
@@ -2824,11 +2812,6 @@ body {
   }
   .blogContent h2 {
     font-size: 35px;
-  }
-  .active.active {
-    color: #003085;
-    -webkit-box-shadow: inset -3px 0 0 #003085;
-            box-shadow: inset -3px 0 0 #003085;
   }
   .header-corner--right {
     fill: #fcfbf6;
