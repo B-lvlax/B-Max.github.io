@@ -91,14 +91,18 @@
 ======================================================*/
 (function() {
   $(window).scroll(function() {
-    $('.blogContent article, .skills-group, .slider-info--active, .slider-slidePic, .feedback-titleWrap, .comments, .about-img').each(function(i) {
+    $('.blogContent article, .skills-group, .slider-info--active, .slider-slidePic, .feedback-titleWrap, .comments, .about-img, .feedbackForm-wrap').each(function(i) {
       var
         $pos = $(this).offset().top,
         $topOfWindow = $(window).scrollTop();
 
-      if ($pos < $topOfWindow + 900) $(this).addClass('moveUp');
-    })
-  })
+      $(this).addClass('moveUp--hidden');
+
+      if ($pos < $topOfWindow * 3) {
+        $(this).removeClass('moveUp--hidden').addClass('moveUp');
+      }
+    });
+  });
 })();
 
 /*======================================================

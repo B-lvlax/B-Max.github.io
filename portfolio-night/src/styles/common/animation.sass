@@ -7,7 +7,6 @@
     transform: translateX(10px)
 
 
-
 @keyframes rubberBand
   from
     transform: scale3d(1, 1, 1)
@@ -25,7 +24,6 @@
     transform: scale3d(1, 1, 1)
 
 
-
 @keyframes arrow
   0%
     transform: translateY(19px)
@@ -38,11 +36,9 @@
   animation: 1.5s ease-in-out 0.3s infinite arrow
 
 
-
 @mixin grow($scale: 1.4)
   transition: 0.5s ease
   transform: scale($scale)
-
 
 
 @mixin underline($clr, $pos, $height)
@@ -64,15 +60,10 @@
     left: 20%
 
 
-
-@keyframes moveUp
-  from
-    transform: translate3d(0, 300px, 0)
-    opacity: 0
-  to
-    transform: translate3d(0, 0, 0)
-    opacity: 1
-
-
 .moveUp
-  animation: moveUp 1.2s ease
+  transform: translate3d(0, 0, 0)
+  opacity: 1
+  transition: all 1.2s ease
+  &--hidden
+    transform: translate3d(0, 500px, 0)
+    opacity: 0
