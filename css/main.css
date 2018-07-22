@@ -436,7 +436,6 @@ body {
           perspective: 1200px;
   width: 100%;
   height: 100vh;
-  min-height: 650px;
   background: #004cd1 url(../img/bg.jpg) no-repeat center;
   background-color: #003085;
   background-size: cover;
@@ -497,6 +496,7 @@ body {
 .login-btn {
   display: block;
   max-width: 170px;
+  margin-bottom: 32px;
   padding: 10px 19px 10px;
   cursor: pointer;
   -webkit-box-shadow: inset 0 0 0 1px #fff;
@@ -524,7 +524,8 @@ body {
   -webkit-perspective: 1200px;
           perspective: 1200px;
   width: 300px;
-  min-height: 408px;
+  min-height: 400px;
+  margin-bottom: 16px;
   -webkit-transform-style: preserve-3d;
           transform-style: preserve-3d;
 }
