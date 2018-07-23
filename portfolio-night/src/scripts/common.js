@@ -1,3 +1,25 @@
+var isMobile = {
+  android: function android() {
+    return navigator.userAgent.match(/Android/i);
+  },
+  blackberry: function blackberry() {
+    return navigator.userAgent.match(/BlackBerry/i);
+  },
+  ios: function ios() {
+    return navigator.userAgent.match(/iPhone|iPad|iPod/i);
+  },
+  opera: function opera() {
+    return navigator.userAgent.match(/Opera Mini/i) || navigator.userAgent.match(/opr/i) && typeof window.orientation !== "undefined";
+  },
+  windows: function windows() {
+    return navigator.userAgent.match(/IEMobile/i);
+  },
+  any: function any() {
+    return isMobile.android() || isMobile.blackberry() || isMobile.ios() || isMobile.opera() || isMobile.windows();
+  }
+};
+
+
 /*======================================================
   FLIP CARD
 ======================================================*/
@@ -77,7 +99,7 @@
 ======================================================*/
 (function() {
   $('.container').mousemove(function(e) {
-    if ($(window).width() >= 768) {
+    if (!isMobile.any()) {
       $('.indexBg-img').css({
         'transform': 'translate3d(' + e.pageX / -15 + 'px, ' + e.pageY / 15 + 'px, 0)'
       });
@@ -105,6 +127,7 @@
   });
 })();
 
+
 /*======================================================
   Adding smoothyness to buttons for scrolling up/down
 ======================================================*/
@@ -119,4 +142,12 @@
       scrollTop: $elemPos
     }, 500);
   });
+})();
+
+
+/*======================================================
+  Fix video background for Opera Mini
+======================================================*/
+(function() {
+  if (isMobile.opera()) $('.videoBg').remove();
 })();
