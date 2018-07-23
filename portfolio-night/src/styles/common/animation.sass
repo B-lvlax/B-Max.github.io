@@ -24,6 +24,8 @@
     transform: scale3d(1, 1, 1)
 
 
+@mixin arrow
+  animation: 1.5s ease-in-out infinite arrow
 @keyframes arrow
   0%
     transform: translateY(19px)
@@ -31,9 +33,6 @@
     transform: translateY(4px)
   100%
     transform: translateY(19px)
-
-@mixin arrow
-  animation: 1.5s ease-in-out infinite arrow
 
 
 @mixin grow($scale: 1.4)
@@ -60,10 +59,10 @@
     left: 20%
 
 
-.moveUp
-  transform: translate3d(0, 0, 0)
-  opacity: 1
-  transition: all 1.2s ease
-  &--hidden
-    transform: translate3d(0, 500px, 0)
-    opacity: 0
+@mixin spin
+  animation: spin 2s cubic-bezier(0.91, 0.06, 0.21, 0.75) infinite
+@keyframes spin
+  from
+    transform: rotate(0deg)
+  to
+    transform: rotate(720deg)

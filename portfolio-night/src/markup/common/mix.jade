@@ -36,7 +36,6 @@ mixin bgTitle(name, txt, path)
     h2(class="#{name}-title--main")= txt 
 
 
-
 mixin preloader
   .preloader.preloader-noJs
     .preloader-inner
@@ -44,3 +43,9 @@ mixin preloader
         circle.circle-bar(fill="none" transform="rotate(-90 50 25)" stroke-width="2.5864" cx="25" cy="25" r="25")
         circle.circle-small(cx="50" cy="15" r="4.5")
       span.circle-txt 0
+
+
+mixin arrowUp(name)
+  a.arrowUp#toBottom(href="#toUp" class="#{name}")
+    svg.arrowUp-icon(width="26" height="17" class="#{name}-icon")
+      use(xlink:href="#arrow_up")

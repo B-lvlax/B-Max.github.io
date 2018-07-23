@@ -1,4 +1,5 @@
 @import common/mix
+@import common/animation
 @import common/typography
 
 
@@ -79,7 +80,7 @@ body
 
   &-small
     transform-origin: 50px 50px
-    animation: spin 2s cubic-bezier(0.91, 0.06, 0.21, 0.75) infinite
+    @include spin
     fill: $baseClr
 
   &-txt
@@ -97,13 +98,6 @@ body
     stroke: $baseClr
 
 
-@keyframes spin
-  from
-    transform: rotate(0deg)
-  to
-    transform: rotate(720deg)
-
-
 .formError
   animation: shake 0.6s ease
 .fieldValid
@@ -112,8 +106,40 @@ body
   box-shadow: 0 0 5px 3px $error
 
 
+.moveUp
+  transform: translate3d(0, 0, 0)
+  opacity: 1
+  transition: all 1.2s ease
 
-@import common/animation
+  &--hidden
+    transform: translate3d(0, 500px, 0)
+    opacity: 0
+
+
+.arrowUp
+  display: block
+  width: 48px
+  height: 48px
+  margin: 40px auto
+  text-align: center
+
+  &-icon
+    width: 26px
+    height: 17px
+    fill: $theme
+    @include arrow
+
+  &:hover .arrowUp-icon
+    fill: darken($theme, 15%)
+
+  &:active .arrowUp-icon
+    fill: darken($theme, 15%)
+
+
+
+
+
+
 @import welcome/welcome
 @import common/menu
 @import common/header/header
