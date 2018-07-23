@@ -76,25 +76,6 @@ var isMobile = {
 
 
 /*======================================================
-  SIDEBAR
-======================================================*/
-(function() {
-  $('.sidebar-btn').on('click', function(e) {
-    e.preventDefault();
-    $('.sidebar').toggleClass('sidebar--show');
-    $('.sidebar-btn').toggleClass('sidebar-btn--move');
-  });
-
-  $(document).click(function(e) {
-    if ($(e.target).parents().filter('.sidebar').length != 1 && !$(e.target).hasClass('.sidebar-btn')) {
-      $('.sidebar').removeClass('sidebar--show');
-      $('.sidebar-btn').removeClass('sidebar-btn--move');
-    }
-  });
-})();
-
-
-/*======================================================
   Типо PARRALAX
 ======================================================*/
 (function() {
