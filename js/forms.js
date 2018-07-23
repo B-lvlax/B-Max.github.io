@@ -14,14 +14,20 @@ $(document).ready(function() {
     return true;
   }
 
+  function removeError(elem) {
+    setTimeout(function() {
+      elem.removeClass('fieldError fieldValid');
+    }, 5000);
+  }
+
   // Feedback Form
   //=======================================================
   $('.feedbackForm').on('submit', function(e) {
     var
       $blockForm = $('.feedbackForm-wrap'),
+      $fields = $('.feedbackForm-input'),
       $name = $(this).find('[type=text]'),
       $mail = $(this).find('[type=email]'),
-      $message = $(this).find('[name=message]'),
       $reset = $(this).find('[type=reset]'),
       $storageName = localStorage.getItem('name'),
       $storageMail = localStorage.getItem('mail');
@@ -29,7 +35,7 @@ $(document).ready(function() {
     if ($storageName) $name.value = $storageName;
     if ($storageMail) $mail.value = $storageMail;
 
-    $('.feedbackForm-input').each(function(i) {
+    $fields.each(function(i) {
       if (!checkField($(this))) {
         e.preventDefault();
         $(this).addClass('fieldError');
@@ -49,11 +55,12 @@ $(document).ready(function() {
     });
 
     $reset.on('click', function() {
-      $('.feedbackForm-input').each(function(i) {
-        $(this).removeClass('fieldError');
-        $(this).removeClass('fieldValid');
+      $fields.each(function(i) {
+        $(this).removeClass('fieldError fieldValid');
       });
     });
+
+    removeError($fields);
   });
 
 
@@ -62,15 +69,13 @@ $(document).ready(function() {
   $('.entryForm').on('submit', function(e) {
     var
       $blockForm = $('.flip-entry'),
+      $fields = $('.entryForm-input, .entryForm-check, .question-radio#radio-1'),
       $login = $(this).find('[type=text]'),
-      $password = $(this).find('[type=password]'),
-      $checkbox = $(this).find('#man'),
-      $radio = $(this).find('#radio-1'),
       $storageLogin = localStorage.getItem('login');
 
     if ($storageLogin) $login.value = $storageLogin;
 
-    $('.entryForm-input, .entryForm-check, .question-radio#radio-1').each(function(i) {
+    $fields.each(function(i) {
 
       if (!checkField($(this))) {
         e.preventDefault();
@@ -88,6 +93,8 @@ $(document).ready(function() {
         localStorage.setItem('login', $login.value);
       }
     });
+    
+    removeError($fields);
   });
 
 });
