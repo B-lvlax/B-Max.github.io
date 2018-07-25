@@ -44,13 +44,7 @@ block content
           use(xlink:href="#arrow_down")
 
       block corners
-        svg.header-corner(viewbox="0 0 160 40" width="50%")
-          polygon(points="0 0, 160 40, 0 40" preserveAspectRatio="none")
-
-        block cornerRight
-          svg.header-corner(viewbox="0 0 160 40" width="50%")
-            polygon(points="160 0, 160 40, 0 40" preserveAspectRatio="none")
-
+        +corners('')
 
     block mainContent
       main.main

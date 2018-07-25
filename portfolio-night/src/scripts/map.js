@@ -4,11 +4,11 @@
 function initMap() {
   var $mapElement = document.getElementById("map");
   if (!$mapElement) return;
-  
+
   var $mapOptions = {
     zoom: 12,
     scrollwheel: false,
-    center: new google.maps.LatLng(50.45, 30.55, 18),
+    center: new google.maps.LatLng(50.43, 30.6, 18),
     styles: [{
       "featureType": "administrative",
       "elementType": "labels.text.fill",
@@ -63,6 +63,8 @@ function initMap() {
       }]
     }]
   };
+
+  if (isMobile.any()) $mapOptions.center = new google.maps.LatLng(50.45, 30.65, 18);
 
   var
     $map = new google.maps.Map($mapElement, $mapOptions),

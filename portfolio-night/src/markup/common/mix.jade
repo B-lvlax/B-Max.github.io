@@ -49,3 +49,10 @@ mixin arrowUp(name)
   a.arrowUp#toBottom(href="#toUp" class="#{name}")
     svg.arrowUp-icon(width="26" height="17" class="#{name}-icon")
       use(xlink:href="#arrow_up")
+
+mixin corners(name)
+  .header-corners
+    svg.header-corner(viewbox="0 0 160 40" width="50%")
+      polygon(points="0 0, 160 40, 0 40" preserveAspectRatio="none")
+    svg.header-corner(viewbox="0 0 160 40" width="50%" class="#{name}")
+      polygon(points="160 0, 160 40, 0 40" preserveAspectRatio="none")

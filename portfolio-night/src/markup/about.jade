@@ -8,10 +8,8 @@ block title
 block navLink-about
   a.nav-link.nav-link--active(href="about.html") Обо мне
 
-block cornerRight
-  svg.header-corner.header-corner--right(viewbox="0 0 160 40" width="50%")
-    polygon(points="160 0, 160 40, 0 40" preserveAspectRatio="none")
-
+block corners
+  +corners('header-corner--right')
 
 block mainContent
   main.about-main

@@ -305,6 +305,11 @@ body {
   background-color: #faf8f0;
 }
 
+img {
+  max-width: 100%;
+  height: auto;
+}
+
 .person {
   -webkit-transform-style: preserve-3d;
           transform-style: preserve-3d;
@@ -321,8 +326,6 @@ body {
 }
 
 .person-img {
-  max-width: 100%;
-  height: auto;
   background-color: #004cd1;
 }
 
@@ -460,7 +463,7 @@ body {
           perspective: 1200px;
   width: 100%;
   height: 100vh;
-  min-height: 500px;
+  min-height: 550px;
   background: #004cd1 url(../img/bg.jpg) no-repeat center;
   background-color: #003085;
   background-size: cover;
@@ -492,6 +495,7 @@ body {
   bottom: 0;
   left: -200px;
   width: 1000px;
+  max-width: initial;
   height: 250px;
 }
 
@@ -1142,22 +1146,6 @@ body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: start;
-      -ms-flex-align: start;
-          align-items: flex-start;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  width: 100%;
-  height: 100vh;
-  min-height: 650px;
-  background: #004cd1 url(../img/bg.jpg) no-repeat center;
-  background-size: cover;
-}
-
-.header-inner {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
@@ -1166,16 +1154,36 @@ body {
       -ms-flex-pack: justify;
           justify-content: space-between;
   width: 100%;
-  height: 70%;
+  height: 100vh;
+  min-height: 550px;
+  background: #004cd1 url(../img/bg.jpg) no-repeat center;
+  background-size: cover;
+}
+
+.header-inner {
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  width: 100%;
   padding: 10px 20px 0;
 }
 
 .header-arrowDown {
-  position: relative;
-  z-index: 10;
-  -ms-flex-item-align: center;
-      align-self: center;
-  width: 100%;
+  display: block;
+  width: 40px;
+  height: 40px;
+  margin: 0 auto;
   text-align: center;
 }
 
@@ -1195,11 +1203,20 @@ body {
   fill: rgba(255, 255, 255, 0.7);
 }
 
+.header-corners {
+  width: 100%;
+  float: left;
+}
+
 .header-corner {
-  -ms-flex-item-align: end;
-      align-self: flex-end;
   width: 50%;
+  height: 100%;
+  float: left;
   fill: #faf8f0;
+}
+
+.header-corner:last-child {
+  float: right;
 }
 
 .headSocial {
@@ -1218,6 +1235,8 @@ body {
   -webkit-box-pack: start;
       -ms-flex-pack: start;
           justify-content: flex-start;
+  margin-bottom: 32px;
+  width: 100%;
 }
 
 .headSocial-txt--hidden {
@@ -1263,24 +1282,15 @@ body {
   fill: #fff;
 }
 
-.person-wrap {
-  position: relative;
-  -ms-flex-item-align: center;
-      align-self: center;
-  min-height: 290px;
-}
-
 .person-bg {
+  z-index: -1;
+  position: absolute;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
   width: 281px;
   height: 167px;
   opacity: 0.1;
-}
-
-.header-person {
-  position: absolute;
-  top: 20px;
-  right: 0;
-  left: 0;
 }
 
 .person-title--caps {
@@ -1436,13 +1446,13 @@ body {
 
 .blog-main {
   min-height: 100%;
-  padding: 10px 15px 10px;
+  padding: 10px 15px;
   background-color: #faf8f0;
 }
 
 .sidebar {
   position: fixed;
-  z-index: 5;
+  z-index: 10;
   top: 0;
   left: -290px;
   display: -webkit-box;
@@ -1541,6 +1551,12 @@ body {
   padding-bottom: 15px;
 }
 
+.blogContent article > div {
+  overflow: hidden;
+  max-height: 300px;
+  text-align: center;
+}
+
 .blogContent article:not(:last-child) {
   -webkit-box-shadow: inset 0 -4px 0 rgba(0, 0, 0, 0.07);
           box-shadow: inset 0 -4px 0 rgba(0, 0, 0, 0.07);
@@ -1560,11 +1576,6 @@ body {
   margin-bottom: 10px;
   color: rgba(0, 76, 209, 0.7);
   font-size: 14px;
-}
-
-.blogContent img {
-  max-width: 100%;
-  height: auto;
 }
 
 .blogContent p {
@@ -1637,11 +1648,6 @@ body {
   height: 283px;
   overflow: hidden;
   margin-bottom: 20px;
-}
-
-.about-img {
-  max-width: 100%;
-  height: auto;
 }
 
 .about-desc, .skills-desc {
@@ -1868,7 +1874,7 @@ body {
 
 .contacts-map {
   width: 100%;
-  min-height: 650px;
+  min-height: 550px;
   height: 100vh;
   background: #004cd1 url(../img/custom/map.jpg) no-repeat center;
   background-size: cover;
@@ -1893,6 +1899,7 @@ body {
   -ms-flex-item-align: end;
       align-self: flex-end;
   width: 100%;
+  height: 175px;
 }
 
 .headerBg-titleWrap {
@@ -1929,7 +1936,7 @@ body {
 
 .headerBg-corners {
   width: 100%;
-  height: 175px;
+  height: 100%;
   fill: rgba(0, 0, 0, 0.6);
 }
 
@@ -1949,12 +1956,10 @@ body {
       -ms-flex-direction: column;
           flex-direction: column;
   height: 100vh;
-  min-height: 500px;
+  min-height: 550px;
 }
 
 .slider-slidePic {
-  max-width: 100%;
-  height: auto;
   max-height: 100%;
 }
 
@@ -2259,11 +2264,6 @@ body {
   border-radius: 50%;
 }
 
-.comments-img {
-  max-width: 100%;
-  height: auto;
-}
-
 .comments-quote {
   margin-right: 0;
   margin-left: 0;
@@ -2423,17 +2423,13 @@ body {
 
 @media screen and (min-width: 736px) {
   .header-inner {
-    height: 61%;
     padding: 20px 30px 0;
-  }
-  .header-arrowDown {
-    margin-bottom: -110px;
   }
   .header-arrowIcon {
     width: 35px;
     height: 21px;
   }
-  .headerBg-corners {
+  .headerBg {
     height: 253px;
   }
   .person-title--caps {
@@ -2562,6 +2558,10 @@ body {
   .blogContent article {
     margin-bottom: 35px;
   }
+  .blogContent article > div {
+    overflow: unset;
+    max-height: unset;
+  }
   .blogContent h2 {
     font-size: 30px;
     margin-bottom: 13px;
@@ -2636,6 +2636,9 @@ body {
   }
   .contacts-listItem {
     margin-bottom: 20px;
+  }
+  .contacts-map {
+    min-height: 700px;
   }
   .aboutArrowUp {
     bottom: 32%;
@@ -2927,7 +2930,7 @@ body {
   .contacts-listItem {
     width: 50%;
   }
-  .headerBg-corners {
+  .headerBg {
     height: 350px;
   }
   .headerBg-icon {
@@ -3010,8 +3013,8 @@ body {
     width: 1900px;
     height: 400px;
   }
-  .header-inner {
-    height: 50%;
+  .header {
+    min-height: 600px;
   }
   .person-bg {
     width: 459px;

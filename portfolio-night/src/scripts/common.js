@@ -130,5 +130,5 @@ var isMobile = {
   Fix video background for Opera Mini
 ======================================================*/
 (function() {
-  if (isMobile.opera()) $('.videoBg').remove();
+  if (isMobile.opera()) $('.videoBg, .indexBg').remove();
 })();
