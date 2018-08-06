@@ -620,9 +620,10 @@ img {
 .social-txt--hidden {
   position: absolute;
   top: -10000px;
-  left: -5000px;
+  left: -10000px;
   width: 0;
   height: 0;
+  pointer-events: none;
   opacity: 0;
 }
 
@@ -1245,9 +1246,10 @@ img {
 .headSocial-txt--hidden {
   position: absolute;
   top: -10000px;
-  left: -5000px;
+  left: -10000px;
   width: 0;
   height: 0;
+  pointer-events: none;
   opacity: 0;
 }
 
@@ -1396,9 +1398,10 @@ img {
 .footSocial-txt--hidden {
   position: absolute;
   top: -10000px;
-  left: -5000px;
+  left: -10000px;
   width: 0;
   height: 0;
+  pointer-events: none;
   opacity: 0;
 }
 
@@ -2020,9 +2023,10 @@ img {
 .slider-txt--hidden {
   position: absolute;
   top: -10000px;
-  left: -5000px;
+  left: -10000px;
   width: 0;
   height: 0;
+  pointer-events: none;
   opacity: 0;
 }
 
