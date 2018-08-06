@@ -93,7 +93,7 @@ $(document).ready(function() {
         localStorage.setItem('login', $login.value);
       }
     });
-    
+
     removeError($fields);
   });
 
