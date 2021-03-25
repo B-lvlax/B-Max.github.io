@@ -1,6 +1,6 @@
 # Device - магазин гаджетов
 
-[Просмотреть](https://b-max.github.io/Device/)
+[Просмотреть](https://b-max.github.io/device/)
 
 
 ## Описание
