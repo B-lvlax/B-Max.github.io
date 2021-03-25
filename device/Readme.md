@@ -1,6 +1,6 @@
 # Device - магазин гаджетов
 
-[Просмотреть](https://b-lvlax.github.io/Device/)
+[Просмотреть](https://b-lvlax.github.io/device/)
 
 
 ## Описание
