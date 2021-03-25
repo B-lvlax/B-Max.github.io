@@ -1,6 +1,6 @@
 # Gllacy - магазин мороженого
 
-[Просмотреть](https://b-lvlax.github.io/gllaccy/)
+[Просмотреть](https://b-lvlax.github.io/gllacy/)
 
 
 ## Описание
